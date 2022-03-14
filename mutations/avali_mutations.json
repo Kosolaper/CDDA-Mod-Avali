@@ -153,17 +153,28 @@
     "type": "mutation",
     "id": "AVI_MUZZLE",
     "name": { "str": "Avali Muzzle" },
-    "points": 0,
+    "points": -1,
     "visibility": 6,
     "ugliness": 4,
-    "mixed_effect": true,
-    "consume_time_modifier": 0.6,
-    "description": "Your face reshaped in very strange way. While your muzzle elongolated, nothing left from your nose, but strangely you still able to breathe freely with your mouth shut. Also your teeth grown into incredibly sharp triangular row of fangs. In addition to letting you eat faster, you can use them as a lethal natural weapon.",
-    "types": [ "TEETH", "MUZZLE" ],
+    "description": "Your face reshaped in very strange way. While your muzzle elongolated, nothing left from your nose, but strangely you still able to breathe freely with your mouth shut.",
+    "types": [ "MUZZLE" ],
     "prereqs": [ "SNOUT" ],
-    "prereqs2": [ "FANGS" ],
     "restricts_gear": [ "mouth" ],
     "allow_soft_gear": true,
+    "category": [ "AVALI" ],
+    "threshreq": [ "THRESH_AVALI" ]
+  },
+  {
+    "type": "mutation",
+    "id": "AVI_TEETH",
+    "name": { "str": "Avali Teeth" },
+    "points": 4,
+    "visibility": 3,
+    "ugliness": 2,
+    "consume_time_modifier": 0.6,
+    "description": "Your teeth grown into incredibly sharp triangular row of fangs. In addition to letting you eat faster, you can use them as a lethal natural weapon.",
+    "types": [ "TEETH" ],
+    "prereqs": [ "FANGS" ],
     "category": [ "AVALI" ],
     "threshreq": [ "THRESH_AVALI" ],
     "social_modifiers": { "intimidate": 5 },
@@ -174,6 +185,12 @@
       "chance": 20,
       "base_damage": { "damage_type": "stab", "amount": 20 }
     }
+  },
+  {
+    "type": "mutation",
+    "id": "SLIT_NOSTRILS",
+    "copy-from": "SLIT_NOSTRILS",
+    "extend": { "category": [ "AVALI" ], "changes_to": [ "AVI_MUZZLE" ] }
   },
   {
     "type": "mutation",
@@ -251,7 +268,7 @@
     "type": "mutation",
     "id": "FANGS",
     "copy-from": "FANGS",
-    "extend": { "category": [ "AVALI" ] }
+    "extend": { "category": [ "AVALI" ], "changes_to": [ "AVI_TEETH" ] }
   },
   {
     "type": "mutation",
@@ -309,12 +326,6 @@
   },
   {
     "type": "mutation",
-    "id": "SLIT_NOSTRILS",
-    "copy-from": "SLIT_NOSTRILS",
-    "extend": { "category": [ "AVALI" ] }
-  },
-  {
-    "type": "mutation",
     "id": "HOLLOW_BONES",
     "copy-from": "HOLLOW_BONES",
     "extend": { "category": [ "AVALI" ] }
@@ -323,6 +334,6 @@
     "type": "mutation",
     "id": "SNOUT",
     "copy-from": "SNOUT",
-    "extend": { "category": [ "AVALI" ] }
+    "extend": { "category": [ "AVALI" ]"changes_to": [ "AVI_MUZZLE" ] }
   }
 ]
