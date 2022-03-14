@@ -334,6 +334,6 @@
     "type": "mutation",
     "id": "SNOUT",
     "copy-from": "SNOUT",
-    "extend": { "category": [ "AVALI" ]"changes_to": [ "AVI_MUZZLE" ] }
+    "extend": { "category": [ "AVALI" ], "changes_to": [ "AVI_MUZZLE" ] }
   }
 ]
